@@ -229,19 +229,25 @@ p5{
   /* vertical-align:middle; */
 }
 
-#a, #b, #c{
-  display:none;
-}
-#a:target{
-  display:block;
+button{
+  color: white;
+  background: #6cf;
+  border: none;
+  font-size: 2rem;
+  outline: 0;
+  padding-left: 30px;
 }
 
-#b:target
-input[type="checkbox"]:checked{
-  display: block;
+.all:clicked input[type="checkbox"]:checked{
+  display: none;
 }
-#c:target{
-  display:block;
+
+.complete:clicked input[type="checkbox"]:checked{
+  display: none;
+}
+
+.todo:clicked .list:checked{
+  display: none;
 }
 
 
@@ -276,6 +282,10 @@ label{
 	float: left;
 	width: 95%;
 	transition: all .3s ease;
+}
+
+.invisible{
+  display: none;
 }
 
 /************************************* Form *************************************************/

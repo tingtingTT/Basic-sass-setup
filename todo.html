@@ -7,18 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Raleway:300" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
-    <script>
-            function openNav() {
-                document.getElementById("sideNavigation").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-            }
-             
-            function closeNav() {
-                document.getElementById("sideNavigation").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-            }
-    </script>
+    <script src="scripts/main.js"></script>
 
+    <!-- INCLUDE JQUERY -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <title>Starter Project</title>
   </head>
 
@@ -60,58 +52,42 @@
     <header>
         <img src="images/form.jpg" class="img3">
     </header>
+   
     <div class="titleList">
-        <a href="#a" style="color:white; font-size: 2rem; font-family: Arial, Helvetica, sans-serif; padding-right: 40px">Show All</a>
-        <a href="#b" style="color:white; font-size: 2rem; font-family: Arial, Helvetica, sans-serif; padding-right: 40px">Show Completed</a>
-        <a href="#c" style="color:white; font-size: 2rem; font-family: Arial, Helvetica, sans-serif; padding-right: 40px">Show Todo</a>       
+        <button class="all" onClick="showAll()">Show All</button>
+        <button class="complete" onClick="showComplete()">Show Completed</button>
+        <button class="todo" onClick="showTodo()">Show Todo</button>
     </div>
-
-    <div class="row"></div>
 
     <div class="listItems">
-        <div id="a" class="page"> 
-            <ol class="list">
-                <li>
-                    <input type="checkbox" id="check-1" checked="checked">
-                    <label for="check-1">Groceries</label>
-                    <p5>get more Spinach</p5>
-                    <p5>2/10/2018</p5>
-                </li>
-                <li>
-                    <input type="checkbox" id="check-2">
-                    <label for="check-2">School</label>
-                    <p5>essay on topic "The Road to be a Successful Sailorman/Body Builder" </p5>
-                    <p5>2/15/2018</p5>
-                </li>
-                <li>
-                    <input type="checkbox" id="check-3">
-                    <label for="check-3">Life Goal</label>
-                    <p5>make sure Olive is safe, if not, go save her</p5>
-                    <p5>∞ until the end</p5>
-                </li>
-                <li>
-                    <input type="checkbox" id="check-4">
-                    <label for="check-4">Activity</label>
-                    <p5>beat up Bluto </p5>
-                    <p5>3/1/2018</p5>
-                </li>
-            </ol>
-        </div>
-        <div id="b" class="page"> 
-                <ol class="list">
-                        <li>
-                            <input type="checkbox" id="check-1" checked="checked">
-                            <label for="check-1">Groceries</label>
-                            <p5>get more Spinach</p5>
-                            <p5>2/10/2018</p5>
-                        </li>
-                        </ol>
-        </div>
-        <div id="c" class="page"> this is c id</div>
+        <ol class="list"  id="listItems">
+            <li>
+                <input type="checkbox" id="check-1" value="dddddddddddddddddddddddddddd">
+                <label for="check-1">Groceries</label>
+                <p5>get more Spinach</p5>
+                <p5>2/10/2018</p5>
+            </li>
+            <li>
+                <input type="checkbox" id="check-2">
+                <label for="check-2">School</label>
+                <p5>essay on topic "The Road to be a Successful Sailorman/Body Builder" </p5>
+                <p5>2/15/2018</p5>
+            </li>
+            <li>
+                <input type="checkbox" id="check-3">
+                <label for="check-3">Life Goal</label>
+                <p5>make sure Olive is safe, if not, go save her</p5>
+                <p5>∞ until the end</p5>
+            </li>
+            <li>
+                <input type="checkbox" id="check-4">
+                <label for="check-4">Activity</label>
+                <p5>beat up Bluto </p5>
+                <p5>3/1/2018</p5>
+            </li>
+        </ol>
     </div>
-        
 
-    
     <footer>
         <div class="navi">
             <nav>
@@ -125,7 +101,5 @@
         </div>
     </footer>
   
-    <!-- INCLUDE JQUERY -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 </div>
 </html>
