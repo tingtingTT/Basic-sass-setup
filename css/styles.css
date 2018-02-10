@@ -30,11 +30,8 @@ body {
   line-height: 1.7;
   color: #777; }
 
-/* 
+/******************************************** Grid ***************************************/
 
-This style is used for showing how the grid works. Feel free to delete this file if you dont need it anymore!
-
-*/
 .grid-test [class^="col-"] {
   background-color: #55c57a;
   padding: 1rem;
@@ -83,6 +80,8 @@ This style is used for showing how the grid works. Feel free to delete this file
   .row .col-3-of-4 {
     width: calc( 3 *((100% - 3 * 6rem) / 4 ) + 2 * 6rem); }
 
+/*******************************************Header/Footer **********************************/
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -96,6 +95,16 @@ header{
   color: hotpink;
   text-align: center;
 }  
+
+footer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:40px;   /* Height of the footer */
+  background:#6cf;
+}
+
+/****************************************Navigation ************************************/
 
 .navi{
   width: 100%;
@@ -120,52 +129,14 @@ header{
   display: inline-block;  
 }
 
-.titleList{
-  width: 50%;
-  height: 8.5%;
-  font-size: 2rem;
-  color: rgb(255, 0, 13);
-  text-align: center;
-  background:#6cf;
-  list-style: none;
-  clear: both;
-  right: 0;
-  left: 0;
-  position: absolute;
-  margin: auto;
-  /* vertical-align:middle; */
-}
-
-.listItems{
-  width: 50%;
-  height: 5%;
-  font-size: 2rem;
-  color: rgb(255, 0, 13);
-  text-align: center;
-  /* background:#6cf; */
-  list-style: none;
-  clear: both;
-  right: 0;
-  left: 0;
-  position: absolute;
-  margin: auto;
-  /* vertical-align:middle; */
-}
-
+/************************************* a Tag ***************************************/
 
 a{
   text-decoration: none;
   color: white;
 }
 
-
-footer{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:60px;   /* Height of the footer */
-  background:#6cf;
-}
+/****************************** Image ***********************************/
 
 img{
   max-width: 150%;
@@ -175,8 +146,8 @@ img{
 }
 
 .img2{
- width: 10%;
- height: 10%;
+ width: 8%;
+ height: 8%;
  padding: 0;
 }
 
@@ -186,12 +157,13 @@ img{
   padding: 10px;
 }
 
+/*********************************************Paragraph****************************/
+
 p{
   font-size: 1.6rem; 
   padding-left: 180px;
   /* color: rgb(28, 0, 128); */
 }
-
 
 p1{
   padding-left: 350px;
@@ -218,10 +190,43 @@ p4{
   color: rgb(28, 0, 128);
 }
 
-
 p5{
   font-size: 15px;
   padding: 30px;
+}
+
+/************************************** TODO List************************************/
+
+.titleList{
+  width: 50%;
+  height: 8.5%;
+  font-size: 2rem;
+  color: rgb(255, 0, 13);
+  text-align: center;
+  background:#6cf;
+  list-style: none;
+  clear: both;
+  right: 0;
+  left: 0;
+  position: relative;
+  margin: auto;
+  /* vertical-align:middle; */
+}
+
+.listItems{
+  width: 50%;
+  height: 5%;
+  font-size: 2rem;
+  color: rgb(255, 0, 13);
+  text-align: center;
+  /* background:#6cf; */
+  list-style: none;
+  clear: both;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin: auto;
+  /* vertical-align:middle; */
 }
 
 #a, #b, #c{
@@ -273,7 +278,7 @@ label{
 	transition: all .3s ease;
 }
 
-
+/************************************* Form *************************************************/
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -310,10 +315,11 @@ input[type=submit]:hover {
   padding: 20px;
   right: 0;
   left: 0;
-  position: absolute;
+  position: relative;
   margin: auto;
 }
 
+/***************************Side Bar ************************************************************/
 
 /* The side navigation menu */
 .sidenav {
@@ -323,7 +329,7 @@ input[type=submit]:hover {
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: #6cf; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -333,15 +339,15 @@ input[type=submit]:hover {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 20px;
+  color: white;
   display: block;
   transition: 0.3s
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
-  color: #f1f1f1;
+  color: hotpink;
 }
 
 /* Position and style the close button (top right corner) */
@@ -356,7 +362,7 @@ input[type=submit]:hover {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
-  padding: 20px;
+  padding: 0;
   overflow:hidden;
   width:100%;
 }
@@ -366,7 +372,7 @@ overflow-x: hidden;
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  /* background-color: #6cf; */
   overflow: hidden;
 }
 
@@ -374,16 +380,17 @@ overflow-x: hidden;
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: hotpink;
   text-align: center;
-  padding: 14px 16px;
+  padding-top: 16px;
+  padding-left: 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 10px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: white;
   color: black;
 }
 
@@ -398,6 +405,3 @@ overflow-x: hidden;
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-
-a svg{
-transition:all .5s ease;}
