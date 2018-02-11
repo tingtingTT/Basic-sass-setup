@@ -1,12 +1,12 @@
-function openNav() {
-    document.getElementById("sideNavigation").style.width = "350px";
-    document.getElementById("main").style.marginLeft = "350px";
-}
+// function openNav() {
+//     document.getElementById("sideNavigation").style.width = "350px";
+//     document.getElementById("main").style.marginLeft = "350px";
+// }
  
-function closeNav() {
-    document.getElementById("sideNavigation").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-}
+// function closeNav() {
+//     document.getElementById("sideNavigation").style.width = "0";
+//     document.getElementById("main").style.marginLeft = "0";
+// }
 
 function showAll(){
     console.log("clicked");

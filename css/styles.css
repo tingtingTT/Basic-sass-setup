@@ -97,8 +97,9 @@ header{
 }  
 
 footer{
-  position:absolute;
+  position:fixed;
   bottom:0;
+  height: 10%;
   width:100%;
   height:40px;   /* Height of the footer */
   background:#6cf;
@@ -224,7 +225,7 @@ p5{
   clear: both;
   right: 0;
   left: 0;
-  position: absolute;
+  position: relative;
   margin: auto;
   /* vertical-align:middle; */
 }
@@ -274,7 +275,8 @@ input[type="checkbox"]:checked + label{
 
 .list li{
 	float: left;
-	width: 100%;
+  width: 100%;
+  border: 1px solid #6cf;
 }
 
 label{
@@ -320,6 +322,7 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
+  border: 1px solid #6cf;
   width: 50%;
   background-color: #f2f2f2;
   padding: 20px;
@@ -333,16 +336,19 @@ input[type=submit]:hover {
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  /* height: 100%; 100% Full-height */
+  width: 15%; /* 0 width - change this with JavaScript */
+  height: 100%;
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
+  /* top: 0;
+  left: 0; */
   top: 0;
-  left: 0;
+  bottom: 20%;
   background-color: #6cf; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+   /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
@@ -361,20 +367,22 @@ input[type=submit]:hover {
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+/* .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
+} */
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
   padding: 0;
+  width: 85%;
+  float: right;
+
   overflow:hidden;
-  width:100%;
 }
 body {
 overflow-x: hidden;
