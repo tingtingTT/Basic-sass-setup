@@ -7,8 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Raleway:300" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
-    <script src="scripts/main.js"></script>
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="scripts/todoForm.js"></script>
+    
     <title>Starter Project</title>
   </head>
 
@@ -56,8 +60,8 @@
         <input type="text" id="tname" name="taskname" placeholder="Your task..">
     
         <label for="date" style="font-size: 1.6rem;">Due Day</label>
-        <input type="date" id="date" name="date" placeholder="Select due day..">
-    
+        <input type="text" id="datepicker">
+
         <label for="notes" style="font-size: 1.6rem;">Notes</label>
         <textarea id="subject" name="subject" placeholder="Write Your Notes.." style="height:200px"></textarea>
     
@@ -80,6 +84,5 @@
     </footer>
   
     <!-- INCLUDE JQUERY -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 </div>
 </html>
