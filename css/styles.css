@@ -239,6 +239,8 @@ button{
   padding-left: 30px;
 }
 
+
+
 .all:clicked input[type="checkbox"]:checked{
   display: none;
 }
@@ -381,7 +383,6 @@ input[type=submit]:hover {
   padding: 0;
   width: 85%;
   float: right;
-
   overflow:hidden;
 }
 body {
@@ -416,6 +417,18 @@ overflow-x: hidden;
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+}
+
+
+/******************** Table **********************/
+th, td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+table{
+  font-size: 1.6rem; 
+  padding-left: 180px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
