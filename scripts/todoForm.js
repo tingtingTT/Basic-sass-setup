@@ -7,19 +7,6 @@ $(document).ready(function(){
 
 var todos = [];
 
-// function submitClicked(){
-//     console.log("clicked")
-//     var name = document.getElementById('name').value;
-//     var date = document.getElementById('datepicker').value;
-//     var note = document.getElementById('message').value;
-//     // Save the name in localStorage.
-//     var todo = {name: name, date: date, note: note};
-//     todos.push(todo);
-// }
-
-
-
-
 function Todo(name, date, note){
     this.name = name;
     this.date = date;
@@ -62,9 +49,7 @@ window.onload = function() {
         var date = document.getElementById('datepicker').value;
         var note = document.getElementById('message').value;
         // Save the name in localStorage.
-        var todo = {name: name, date: date, note: note};
-        todos.push(todo);
-        // addNewTodo(name, date, note);
+        addNewTodo(name, date, note);
     });
     }
 }
