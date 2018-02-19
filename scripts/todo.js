@@ -32,5 +32,11 @@ function showTodo(){
     $("input:checked").siblings().addClass("invisible");
 }
 
-var name = localStorage.getItem('name');
-console.log(name);
+
+
+window.onload = function() {
+    // Check for LocalStorage support.
+    if (localStorage) {
+        var name = localStorage.getItem('name');
+    }}
+
