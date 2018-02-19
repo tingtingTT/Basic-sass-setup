@@ -31,3 +31,6 @@ function showTodo(){
     $("input:checked").addClass("invisible");
     $("input:checked").siblings().addClass("invisible");
 }
+
+var name = localStorage.getItem('name');
+console.log(name);

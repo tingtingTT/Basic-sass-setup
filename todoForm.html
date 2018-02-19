@@ -21,16 +21,6 @@
         <a href="#"style="padding-top:100px;">I really enjoy making this project</a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date">Resources</a>
     </div>
-       
-    <!-- <nav class="topnav">
-        <a href="#" onclick="openNav()">
-          <svg width="30" height="30" id="icoOpen">
-              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
-              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
-              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
-          </svg>
-        </a>
-    </nav> -->
 
     <div id="main">
     <header>
@@ -45,7 +35,6 @@
                 <li class="navigation__link"><a href="./index.html">Home</a></li>
                 <li class="navigation__link"><a href="./todo.html">Todo</a></li>
                 <li class="navigation__link"><a href="./todoForm.html">Form</a></li>
-
             </ul>
         </nav>
     </div>
@@ -55,19 +44,23 @@
             <img src="images/todo.png" class="img2">
     </header>
 
-    <div class="container">
-        <label for="tname" style="font-size: 1.6rem;">Task Title</label>
-        <input type="text" id="tname" name="taskname" placeholder="Your task..">
-    
-        <label for="date" style="font-size: 1.6rem;">Due Day</label>
-        <input type="text" id="datepicker" placeholder="Pick Your Due Day...">
-
-        <label for="notes" style="font-size: 1.6rem;">Notes</label>
-        <textarea id="subject" name="subject" placeholder="Write Your Notes.." style="height:200px"></textarea>
-    
-        <input type="submit" value="Submit" onClick="location.href='./todo.html'">
-    
-    </div>
+    <form id="contactForm" class="container">
+        <div class="field">
+            <label for="tname" style="font-size: 1.6rem;">Task Title</label>
+            <input type="text" id="name" name="taskname" placeholder="Your task..">
+        </div>
+        <div class="field">
+            <label for="date" style="font-size: 1.6rem;">Due Day</label>
+            <input type="text" id="datepicker" placeholder="Pick Your Due Day...">
+        </div>
+        <div class="field">
+            <label for="notes" style="font-size: 1.6rem;">Notes</label>
+            <textarea id="message" name="message" placeholder="Write Your Notes.." style="height:200px"></textarea>
+        </div>
+        <div class="field">
+            <input type="submit" value="Submit" id="submitButton">
+        </div>
+    </form>
 
 
     <footer>
@@ -82,7 +75,6 @@
             </nav>
         </div>
     </footer>
-  
-    <!-- INCLUDE JQUERY -->
+
 </div>
 </html>
