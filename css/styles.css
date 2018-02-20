@@ -199,7 +199,7 @@ p5{
 /************************************** TODO List************************************/
 
 .titleList{
-  width: 50%;
+  width: 70%;
   height: 8.5%;
   font-size: 2rem;
   color: rgb(255, 0, 13);
@@ -214,9 +214,12 @@ p5{
   /* vertical-align:middle; */
 }
 
+ol li{
+  list-style-type: none;
+}
 .listItems{
-  width: 50%;
-  height: 5%;
+  width: 70%;
+  height: 20%;
   font-size: 2rem;
   color: rgb(255, 0, 13);
   text-align: center;
@@ -243,7 +246,7 @@ button:hover{
 }
 .button2{
   color: white;
-  background: #6cf;
+  background: hotpink;
   border: none;
   font-size: 13px;
   position: relative;
@@ -253,6 +256,22 @@ button:hover{
   padding: 5px;
 }
 .button2:hover{
+  cursor: pointer;
+}
+
+
+.button3{
+  color: white;
+  background: #6cf;
+  border: none;
+  font-size: 13px;
+  position: relative;
+  /* top: 5px; */
+  /* right: 12px; */
+  float: left;
+  padding: 5px;
+}
+.button3:hover{
   cursor: pointer;
 }
 
@@ -272,8 +291,8 @@ button:hover{
 input[type="checkbox"]{
   position: relative;
   top: 14px;
-  right: 12px;
-	float: right;
+  left: 14px;
+	float: left;
 }
 
 input[type="checkbox"]:checked + label{
@@ -340,7 +359,7 @@ input[type=submit]:hover {
 .container {
   border-radius: 5px;
   border: 1px solid #6cf;
-  width: 50%;
+  width: 70%;
   background-color: #f2f2f2;
   padding: 20px;
   bottom: 30px;
@@ -461,6 +480,49 @@ table{
   background-color: #f44336;
   color: white;
 }
+
+/******************* Drop Down *****************************/
+.dropbtn {
+  color: white;
+  background: #6cf;
+  border: none;
+  font-size: 2rem;
+  outline: 0;
+  padding-left: 30px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  font-size: 1.2rem; 
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
 
 
 /******************* Media ************************************/

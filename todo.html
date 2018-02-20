@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
 
     <script src="scripts/todo.js"></script>
 
@@ -51,13 +49,40 @@
         <button class="all" onClick="showAll()">Show All</button>
         <button class="complete" onClick="showComplete()">Show Completed</button>
         <button class="todo" onClick="showTodo()">Show Todo</button>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Sort</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#Posted Date">Posted Date(Ascending)</a>
+                <a href="#Posted Date">Posted Date(Descending)</a>
+                <a href="#Last Updated Date">Last Updated Date(Ascending)</a>
+                <a href="#Last Updated Date">Last Updated Date(Descending)</a>
+                <a href="#Due Date">Due Date(Ascending)</a>
+                <a href="#Due Date">Due Date(Descending)</a>
+            </div>
+        </div>
     </div>
 
-    <div class="listItems">
-        <div id="listItems" class="list" >
-            <ol id="newList">
-            </ol>
+    <form id="contactForm" class="container" style="display: none" action='./todo.html' method="get">
+        <div class="field">
+            <label for="tname" style="font-size: 1.6rem;">Task Title</label>
+            <input type="text" id="name" name="taskname" placeholder="Your task..">
         </div>
+        <div class="field">
+            <label for="date" style="font-size: 1.6rem;">Due Day</label>
+            <input type="text" id="datepicker" placeholder="Pick Your Due Day...">
+        </div>
+        <div class="field">
+            <label for="notes" style="font-size: 1.6rem;">Notes</label>
+            <input type="text" id="message" name="message" placeholder="Write Your Notes.."></input>
+        </div>
+        <div class="field">
+            <input type="submit" value="Submit" id="submitButton">
+        </div>
+    </form>
+
+    <div class="listItems">
+        <div id="listItems" class="list" ></div>
     </div>
 
     <footer>

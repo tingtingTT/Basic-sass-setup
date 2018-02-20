@@ -5,14 +5,16 @@ $(document).ready(function(){
         minDate: new Date()});
 });
 
-function Todo(name, date, note){
+function Todo(name, date, note, postDate, mdate){
     this.name = name;
     this.date = date;
     this.note = note;
+    this.postDate = postDate;
+    this.mdate = mdate;
 }
 
-function addNewTodo(name, date, note){
-    var t = new Todo(name, date, note);
+function addNewTodo(name, date, note, postDate, mdate){
+    var t = new Todo(name, date, note, postDate, mdate);
     todos.push(t);
     saveTodos();
 }
@@ -42,8 +44,15 @@ window.onload = function() {
         var name = document.getElementById('name').value;
         var date = document.getElementById('datepicker').value;
         var note = document.getElementById('message').value;
+        var d = new Date();
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+        var postDate = d.getFullYear() + '-' +
+            (month<10 ? '0' : '') + month + '-' +
+            (day<10 ? '0' : '') + day;
+
         // Save the name in localStorage.
-        addNewTodo(name, date, note);
+        addNewTodo(name, date, note, postDate, "N/A");
     });
     }
 }
