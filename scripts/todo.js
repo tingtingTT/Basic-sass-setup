@@ -1,12 +1,3 @@
-// function openNav() {
-//     document.getElementById("sideNavigation").style.width = "350px";
-//     document.getElementById("main").style.marginLeft = "350px";
-// }
- 
-// function closeNav() {
-//     document.getElementById("sideNavigation").style.width = "0";
-//     document.getElementById("main").style.marginLeft = "0";
-// }
 
 function showAll(){
     console.log("clicked");
@@ -32,11 +23,56 @@ function showTodo(){
     $("input:checked").siblings().addClass("invisible");
 }
 
+function getTodos(){
+    var str = localStorage.getItem("todos");
+    todos = JSON.parse(str);
+    if(!todos){
+        todos = [];
+    }
+}
+
+function saveTodos(){
+    var str = JSON.stringify(todos);
+    localStorage.setItem("todos", str);
+}
+
+function removeTodoAtIndex(index){
+    console.log(index);
+    todos.splice(index, 1);
+    saveTodos();
+    $(function() {
+        // Inside your success function
+        for (item in todos) {
+            console.log(item)
+            $("#listItems").append("<li>" +
+            "<input type='checkbox' id=item>" +
+            "<label for=item>"+ todos[item].name + "</label>" + 
+            "<p5>" + todos[item].note + "</p5>" +
+            "<p5> Posted: " + todos[item].date + "<div class='button2' onClick='removeTodoAtIndex(" + item + ")'>Delete</div></p5>" + 
+            "</li>")
+        }
+        $("#newList").html();
+    });
+    
+    
+    
+}
 
 
-window.onload = function() {
-    // Check for LocalStorage support.
-    if (localStorage) {
-        var name = localStorage.getItem('name');
-    }}
+getTodos();
+
+$(function() {
+    // Inside your success function
+    for (item in todos) {
+        console.log(item)
+        $("#listItems").append("<li>" +
+        "<input type='checkbox' id=item>" +
+        "<label for=item>"+ todos[item].name + "</label>" + 
+        "<p5>" + todos[item].note + "</p5>" +
+        "<p5> Posted: " + todos[item].date + "<div class='button2' onClick='removeTodoAtIndex(" + item + ")'>Delete</div></p5>" + 
+        "</li>")
+    }
+    $("#newList").html("#listItems");
+});
+
 

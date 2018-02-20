@@ -5,8 +5,6 @@ $(document).ready(function(){
         minDate: new Date()});
 });
 
-var todos = [];
-
 function Todo(name, date, note){
     this.name = name;
     this.date = date;
@@ -32,16 +30,12 @@ function getTodos(){
     }
 }
 
-window.onload = function() {
-    // submit redirect
-    // var submitButton = document.getElementById('submitButton');
-    // submitButton.addEventListener("click", function(event){
-    //     event.preventDefault();
-    //     window.location = "./todo.html";
-    // }, false);
+getTodos();
 
+window.onload = function() {
     // Check for LocalStorage support.
     if (localStorage) {
+        // localStorage.clear();
         // Add an event listener for form submissions
         document.getElementById('contactForm').addEventListener('submit', function() {
         // Get the value of the name field.
@@ -53,4 +47,6 @@ window.onload = function() {
     });
     }
 }
+
+
 
