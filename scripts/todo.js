@@ -102,6 +102,7 @@ function edit(index){
 
 getTodos();
 
+
 $(function() {
     // Inside your success function
     let $theList = $('<ol>', {"id":"newList"});
