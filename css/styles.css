@@ -135,6 +135,11 @@ footer{
 a{
   text-decoration: none;
   color: white;
+  font-weight: bold;
+}
+
+a:hover{
+  color: hotpink;
 }
 
 /****************************** Image ***********************************/
@@ -220,7 +225,7 @@ ol li{
 
 .listItems{
   width: 70%;
-  height: 20%;
+  height: 70%;
   font-size: 2rem;
   color: rgb(255, 0, 13);
   text-align: center;
@@ -234,6 +239,10 @@ ol li{
   /* vertical-align:middle; */
 }
 
+#list{
+  overflow: hidden;
+}
+
 button{
   color: white;
   background: #6cf;
@@ -242,9 +251,13 @@ button{
   outline: 0;
   padding-left: 30px;
 }
+
 button:hover{
   cursor: pointer;
+  color: hotpink;
+
 }
+
 .button2{
   color: white;
   background: hotpink;
@@ -258,6 +271,8 @@ button:hover{
 }
 .button2:hover{
   cursor: pointer;
+  /* color: hotpink; */
+
 }
 
 
@@ -274,6 +289,8 @@ button:hover{
 }
 .button3:hover{
   cursor: pointer;
+  color: hotpink;
+
 }
 
 .all:clicked input[type="checkbox"]:checked{
@@ -304,8 +321,8 @@ input[type="checkbox"]:checked + label{
 .list{
 	list-style: none;
   color: rgba(0,0,0,.7);
-  padding-bottom: 40px;
-  overflow: scroll;
+  padding-bottom: 60px;
+  overflow-y: scroll;
 }
 
 .list li:nth-child(odd){
@@ -486,7 +503,7 @@ table{
 
 .close:hover {
   background-color: #f44336;
-  color: white;
+  color: hotpink;
 }
 
 /******************* Drop Down *****************************/
@@ -504,7 +521,7 @@ table{
 }
 
 .dropdown {
-  position: relative;
+  position: absolute;
   display: inline-block;
   
 }
@@ -515,7 +532,6 @@ table{
   position: absolute;
   background-color: #f1f1f1;
   min-width: 200px;
-  overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   right: 0;
   z-index: 1;
@@ -532,6 +548,57 @@ table{
 
 .show {display:block;}
 
+/******************************** Pop Up *******************************/
+
+.buttons {
+  color: white;
+  background: #6cf;
+  border: 1px, solid;
+  font-size: 1.5rem;
+  outline: 1px;
+  padding-left: 30px;
+}
+
+.buttons:hover{
+  cursor: pointer;
+  color: hotpink;
+}
+
+.overlay {
+  position: fixed;
+  top: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.7);
+
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  width: 20%;
+  position: relative;
+  background: #6cf;
+  padding: 20px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #6cf;
+}
 
 /******************* Media ************************************/
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

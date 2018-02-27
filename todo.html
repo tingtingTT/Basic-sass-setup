@@ -50,17 +50,9 @@
         <button class="complete" onClick="showComplete()">Show Completed</button>
         <button class="todo" onClick="showTodo()">Show Todo</button>
 
-        <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Sort</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="#Posted Date">Posted Date(Ascending)</a>
-                <a href="#Posted Date">Posted Date(Descending)</a>
-                <a href="#Last Updated Date">Last Updated Date(Ascending)</a>
-                <a href="#Last Updated Date">Last Updated Date(Descending)</a>
-                <a href="#Due Date">Due Date(Ascending)</a>
-                <a href="#Due Date">Due Date(Descending)</a>
-            </div>
-        </div>
+        <a class="button" style="padding-left: 20px;" href="#popup1">Sort</a>
+
+        
     </div>
 
     <form id="contactForm" class="container" style="display: none" action='./todo.html' method="get">
@@ -83,6 +75,18 @@
 
     <div class="listItems">
         <div id="listItems" class="list" ></div>
+    </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <a class="close" href="#">&times;</a>
+            <div class="buttons">Posted Date(Asc)</div>
+            <div class="buttons">Posted Date(Desc)</div>
+            <div class="buttons">Last Updated Date(Asc)</div>
+            <div class="buttons">Last Updated Date(Desc)</div>
+            <div class="buttons">Due Date(Asc)</div>
+            <div class="buttons">Due Date(Desc)</div>
+        </div>
     </div>
 
     <footer>
