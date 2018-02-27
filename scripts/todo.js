@@ -31,9 +31,18 @@ function showTodo(){
 
 function getTodos(){
     var str = localStorage.getItem("todos");
+    console.log("get todo");
+    console.log(str);
+
     todos = JSON.parse(str);
-    if(!todos){
-        todos = [];
+    console.log(todos);
+    if(todos.length === 0){
+        console.log("todo empty");
+        todos = [
+            {name: "Laundry", dueDate: "2018-01-03", note: "Friday night do laundry", postDate: "2018-01-01", updateDate: "2018-01-02"},
+            {name: "Supermarket", dueDate: "2018-02-03", note: "Get apples", postDate: "2018-02-01", updateDate: "2018-02-02"},
+            {name: "Gym", dueDate: "2017-08-03", note: "Cardio", postDate: "2017-08-01", updateDate: "2017-08-02"},
+        ];
     }
 }
 
@@ -46,22 +55,7 @@ function removeTodoAtIndex(index){
     console.log(index);
     todos.splice(index, 1);
     saveTodos();
-    $(function() {
-        // Inside your success function
-        let $theList = $('<ol>', {"id":"newList"});
-        for (item in todos) {
-            $theList.append("<li>" +
-            "<input type='checkbox' id=item>" +
-            "<label for=item>"+ todos[item].name + "</label>" + 
-            "<p5> Posted: " + todos[item].postDate + "</p5>" + 
-            "<p5> Updated: " + todos[item].mdate + "</p5>" + 
-            "<p5> Due: " + todos[item].date + "<div class='button2' onClick='removeTodoAtIndex(" + item + ")'>Delete</div></p5>" + 
-            "<div class='button3' onClick='edit(" + item + ")'>Edit</div></p5>"+
-            "<label for=item>"+ todos[item].note + "</label>" + 
-            "</li>")
-        }
-        $("#listItems").html($theList);
-    });
+    renderTodo();
 }
 
 function edit(index){
@@ -69,7 +63,7 @@ function edit(index){
     document.getElementById('listItems').style.display = "none";
     $('#name').attr('value', todos[index].name);
     $('#message').attr('value', todos[index].note);
-    $('#datepicker').attr('value', todos[index].date);
+    $('#datepicker').attr('value', todos[index].dueDate);
 
     // Check for LocalStorage support.
     if (localStorage) {
@@ -79,31 +73,31 @@ function edit(index){
         // Get the value of the name field.
         var name = document.getElementById('name').value;
         var note = document.getElementById('message').value;
-        var date = document.getElementById('datepicker').value;
+        var dueDate = document.getElementById('datepicker').value;
         todos[index].name = name;
         todos[index].note = note;
-        todos[index].date = date;
+        todos[index].dueDate = dueDate;
 
         var d = new Date();
         var month = d.getMonth()+1;
         var day = d.getDate();
 
-        var mDate = d.getFullYear() + '-' +
+        var updateDate = d.getFullYear() + '-' +
             (month<10 ? '0' : '') + month + '-' +
             (day<10 ? '0' : '') + day;
 
-        todos[index].mdate = mDate;
+        todos[index].updateDate = updateDate;
         saveTodos();
     });
     }
-
-
 }
 
 getTodos();
+renderTodo();
 
 
-$(function() {
+function renderTodo(){
+    $(function() {
     // Inside your success function
     let $theList = $('<ol>', {"id":"newList"});
     for (item in todos) {
@@ -111,32 +105,153 @@ $(function() {
         "<input type='checkbox' id=item>" +
         "<label for=item>"+ todos[item].name + "</label>" + 
         "<p5> Posted: " + todos[item].postDate + "</p5>" + 
-        "<p5> Updated: " + todos[item].mdate + "</p5>" + 
-        "<p5> Due: " + todos[item].date + "<div class='button2' onClick='removeTodoAtIndex(" + item + ")'>Delete</div></p5>" + 
+        "<p5> Updated: " + todos[item].updateDate + "</p5>" + 
+        "<p5> Due: " + todos[item].dueDate + "<div class='button2' onClick='removeTodoAtIndex(" + item + ")'>Delete</div></p5>" + 
         "<div class='button3' onClick='edit(" + item + ")'>Edit</div></p5>"+
         "<label for=item>"+ todos[item].note + "</label>" + 
         "</li>")
     }
     $("#listItems").html($theList);
-});
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+});}
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
-  
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
         if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+            openDropdown.classList.remove('show');
         }
-      }
+        }
     }
-  }
+}
 
 
+function comPostA(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const aDate = a.postDate;
+    const bDate = b.postDate;
+
+    let comparison = 0;
+    if (aDate > bDate) {
+        comparison = 1;
+    } else if (aDate < bDate) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function postA(){
+    todos.sort(comPostA);
+    renderTodo();
+
+}
+
+
+
+function comPostD(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const aDate = a.postDate;
+    const bDate = b.postDate;
+
+    let comparison = 0;
+    if (aDate < bDate) {
+        comparison = 1;
+    } else if (aDate > bDate) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function postD(){
+    todos.sort(comPostD);
+    renderTodo();
+}
+
+function comUpdateA(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const aDate = a.updateDate;
+    const bDate = b.updateDate;
+
+    let comparison = 0;
+    if (aDate > bDate) {
+        comparison = 1;
+    } else if (aDate < bDate) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function updateA(){
+    todos.sort(comUpdateA);
+    renderTodo();
+    window.location = "./todo.html";
+}
+
+
+function comUpdateD(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const aDate = a.updateDate;
+    const bDate = b.updateDate;
+
+    let comparison = 0;
+    if (aDate < bDate) {
+        comparison = 1;
+    } else if (aDate > bDate) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function updateD(){
+    todos.sort(comUpdateD);
+    renderTodo();
+}
+
+
+
+function comDueA(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const aDate = a.dueDate;
+    const bDate = b.dueDate;
+
+    let comparison = 0;
+    if (aDate > bDate) {
+        comparison = 1;
+    } else if (aDate < bDate) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function dueA(){
+    todos.sort(comDueA);
+    renderTodo();
+}
+
+
+function comDueD(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const aDate = a.dueDate;
+    const bDate = b.dueDate;
+
+    let comparison = 0;
+    if (aDate < bDate) {
+        comparison = 1;
+    } else if (aDate > bDate) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function dueD(){
+    todos.sort(comDueD);
+    renderTodo();
+}
+
+
+$('.popup').click(function() {
+    $(".popup").fadeOut(300);
+ });
